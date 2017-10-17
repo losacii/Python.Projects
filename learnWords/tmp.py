@@ -69,7 +69,7 @@ def playtext(fp):
 def Run():
     while True:
         try:
-            playtext("C:/learn/words.txt")
+            playtext("./words.txt")
         except Exception, e:
             print e
 
