@@ -1,0 +1,19 @@
+<!doctype html>
+<html>
+<head>
+    <title>Coding for Entrepreneurs is doing Try Django</title>
+</head>
+<body>
+
+    <img src="../img/default.jpg" alt="default_image"><br><br>
+
+    <a href="{% url 'home' %}">home</a>
+    <a href="{% url 'home' %}">blog</a>
+    <a href="{% url 'about' %}">about</a>
+
+    {% block content %}
+        replace me
+    {% endblock %} 
+
+    </body>
+</html>
