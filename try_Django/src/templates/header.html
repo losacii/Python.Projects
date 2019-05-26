@@ -19,6 +19,7 @@
                   <span class="nav-item nav-link">USER: {{ user.username }}</span>
                   <a class="nav-item nav-link" href="{% url 'user-profile' %}">Profile</a>
                   <a class="nav-item nav-link" href="{% url 'user-logout' %}">Logout</a>
+                  <a class="nav-item nav-link" href="/admin">Admin</a>
                 {% else %}
                   <a class="nav-item nav-link" href="{% url 'user-login' %}">Login</a>
                   <a class="nav-item nav-link" href="{% url 'user-register' %}">Register</a>
