@@ -6,7 +6,3 @@ from .models import Post
 # in blog/admin.py, import Post, then register it.
 admin.site.register(Post)
 
-
-
-
-
