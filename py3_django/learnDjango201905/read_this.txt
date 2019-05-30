@@ -1,0 +1,5 @@
+pipenv install
+pipenv shell
+pip install pqi
+pqi use tuna
+pip install -r requirements.txt
