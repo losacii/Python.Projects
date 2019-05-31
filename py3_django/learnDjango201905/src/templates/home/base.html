@@ -9,18 +9,36 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="{% static 'style/main.css' %}">
+    {% block header %}
+    {% endblock %}
 
 </head>
 <body>
     {% include 'home/header.html' %}
-    <a href="#">HOME</a>
-    <a href="#">BLOG</a>
-    <a href="#">ABOUT</a>
-    <a href="#">CONTACT</a>
 
-    {% block content %}
-    {% endblock %}
-    <h3>bottom line</h3>
+    <main role="main" class="container">
+        <div class="row">
+            <div class="col-md-8">
+            {% block content %}
+                <!-- Content Here-->
+                <h2>Hello</h2>
+            {% endblock %}
+            </div>
+            <div class="col-md-4">
+            <div class="content-section">
+                <h3>Our Sidebar</h3>
+                <p class='text-muted'>You can put any information here you'd like.
+                <ul class="list-group">
+                    <li class="list-group-item list-group-item-light">Latest Posts</li>
+                    <li class="list-group-item list-group-item-light">Announcements</li>
+                    <li class="list-group-item list-group-item-light">Calendars</li>
+                    <li class="list-group-item list-group-item-light">etc</li>
+                </ul>
+                </p>
+            </div>
+            </div>
+        </div>
+    </main>
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
