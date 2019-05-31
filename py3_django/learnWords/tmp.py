@@ -54,7 +54,7 @@ def playtext(fp):
 
     for group in groups:
     
-        os.system("cls")
+        os.system("clear")
         print '- ' * 39 + '\n'  # - - - - - Seperate line - - - - - - - 
     
         lines = group.split("\n")
