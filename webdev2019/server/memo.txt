@@ -1,0 +1,31 @@
+right click 'server' dir: open in terminal.
+
+    python3 -m venv env
+
+code: open 'server' folder
+
+=====>>
+win + shift + p:  select python interpreter
+
+view > terminal: you see virtuan env is automaticaly enabled.
+
+    django-admin startproject myWeb .
+
+debug: click 'gear' icon, 
+
+    python django
+    play! (start server)
+
+    break point
+    refresh
+    open debug window, see infomations!
+    
+
+# Create an app
+    
+    python manage.py startapp blog
+
+
+
+
+

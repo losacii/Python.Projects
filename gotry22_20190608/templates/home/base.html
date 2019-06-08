@@ -1,0 +1,24 @@
+<!-- home/base.html -->
+<html lang="en">
+<head>
+
+    {% if title %}
+        <title>{{ title }}</title>
+    {% else %}
+        <title>undefined tilte</title>
+    {% endif %}
+
+    {% include 'home/bootstrap.html' %}
+</head>
+<body>
+    {% include 'home/navbar.html' %}
+
+    <div class="container">
+    <div class="container-fluid">
+        {% block content %}Replace This!{% endblock %}
+    </div>
+    </div>
+
+    {% include 'home/bootstrap_js.html' %}
+</body>
+</html>

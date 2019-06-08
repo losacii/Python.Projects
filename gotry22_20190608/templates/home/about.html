@@ -1,0 +1,17 @@
+<!-- home/about.html -->
+{% extends 'home/base.html' %}
+
+    {% block content %}
+        <h2>Main About...</h2>
+        <p>{{ user }}</p>
+        <p>{{ user.is_authenticated }}</p>
+        <p>{{ request.user }}</p>
+        <p>{{ request.path }}</p>
+        <p>{{ request.method }}</p>
+        <p>{{ request.user }}</p>
+
+        {% if user.is_authenticated %}
+            <p>User Only data!</p>
+        {% endif %}
+
+    {% endblock %}

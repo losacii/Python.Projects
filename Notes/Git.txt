@@ -1,0 +1,21 @@
+github.com
+
+register
+
+new repository
+
+git clone https://github.com/losacii/gitnote.git
+cd gitnote
+
+new file, edit, save
+
+git add <filename>
+
+git commit -m "some message"
+
+git status
+
+git push(upload)
+git pull(download)
+
+Merge Conflicts:
