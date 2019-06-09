@@ -12,6 +12,9 @@ class Post(models.Model):
     user = models.ForeignKey(User, default=1, null=True, on_delete=models.SET_NULL)
     # default=1 ~ if a new post, user set to first user
 
+    def __str__(self):
+        return f"({self.id}){self.title}"
+
     def get_url(self):
         return f"/blog/{self.slug}"
 

@@ -9,7 +9,7 @@ from .models import Post
 from myserver.forms import PostModelForm
 
 def post_list_view(request):
-    posts = Post.objects.all()[:5] #posts = Post.objects.filter(title__icontains='one')
+    posts = Post.objects.all()[:] # Post.objects.filter(title__icontains='one')
     template = 'blog/list.html'
     context = { "posts": posts }
     return render(request, template, context)
