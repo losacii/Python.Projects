@@ -123,7 +123,31 @@ def eg02():
 
     workbook.save('Excel_Workbook.xls')
 
-def tmp():
+def eg03():
+    ''' 打开 xls, 修改内容， 保存
+    '''
+    from xlrd import open_workbook
+    from xlutils.copy import copy
+    
+    # 打开
+    rb = open_workbook('res.xls')
+    
+    # 获取sheet（0）
+    rs = rb.sheet_by_index(0)
+    
+    wb = copy(rb)       
+    # 利用xlutils.copy函数，将xlrd.Book转为xlwt.Workbook，再用xlwt模块进行存储
+
+    
+    #通过get_sheet()获取的sheet有write()方法
+    ws = wb.get_sheet(0)
+    ws.write(2, 2, 'changed!')
+    
+    wb.save('res1.xls')
+
+def eg04_merge_patterns():
+    ''' 演示： 合并单元格
+    '''
     import xlwt
     workbook = xlwt.Workbook()
     worksheet = workbook.add_sheet('My Sheet')
@@ -139,10 +163,12 @@ def tmp():
     # 第二次合并
     worksheet.write_merge(2, 5, 2, 7, 'Second Merge', style) # Mergesrow 1 through 2's columns 0 through 3.
 
-    workbook.save('Excel_Workbook.xls')
+    workbook.save('res.xls')
     os.system("explorer .")
 
 if __name__ == "__main__":
     tmp()
 
     # https://blog.csdn.net/ngforever/article/details/14225495
+    # openpyxl xlsxwriter xlutils
+    # https://blog.csdn.net/COCO56/article/details/84403107

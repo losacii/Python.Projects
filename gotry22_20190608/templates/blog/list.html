@@ -5,8 +5,10 @@
 
     {% for post in posts %}
         <!-- <li> <a href="/blog/{{ post.slug }}/">{{ post.title }}</a></li> --> 
-        <li> <a href="{{ post.get_url }}"><h4>{{ post.title }}</h4></a></li>
-        <span>{{ post.content | linebreaks | truncatewords:32 }}</span>
+        <a href="{{ post.get_url }}"><h4>{{ post.title }}</h4></a>
+        <!--
+        <span>{{ post.content | linebreaks | truncatewords:16 }}</span>
+        -->
     {% endfor %}<br><br>
 
     {% if user.is_authenticated %}
