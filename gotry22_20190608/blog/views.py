@@ -9,9 +9,12 @@ from .models import Post
 from myserver.forms import PostModelForm
 
 def post_list_view(request):
-    posts = Post.objects.all()[:] # Post.objects.filter(title__icontains='one')
+    qs = Post.objects.published() #qs = Post.objects.all()[:] 
+    if request.user.is_authenticated:
+        my_qs = Post.objects.filter(user=request.user)
+        qs = (qs | my_qs).distinct()
     template = 'blog/list.html'
-    context = { "posts": posts }
+    context = { "posts": qs }
     return render(request, template, context)
 
 @staff_member_required  # prompt user log in

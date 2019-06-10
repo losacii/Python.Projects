@@ -3,14 +3,13 @@ from blog.models import Post
 
 class ContactForm(forms.Form):
     full_name = forms.CharField()
-    last = forms.CharField()
     email = forms.EmailField()
     content = forms.CharField(widget=forms.Textarea)
 
 class PostModelForm(forms.ModelForm):
     class Meta:
         model = Post
-        fields = ['title', 'slug', 'content']
+        fields = ['title', 'slug', 'content', 'publish_date']
     
     def clean_title(self, *args, **kwargs):
         instance = self.instance

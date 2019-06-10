@@ -3,13 +3,14 @@
 
 {% block content %}
 
+    <h5>文章列表</h5>
     {% for post in posts %}
         <!-- <li> <a href="/blog/{{ post.slug }}/">{{ post.title }}</a></li> --> 
-        <a href="{{ post.get_url }}"><h4>{{ post.title }}</h4></a>
+        {% include 'blog/list-inline.html' with truncate=True %}
         <!--
         <span>{{ post.content | linebreaks | truncatewords:16 }}</span>
         -->
-    {% endfor %}<br><br>
+    {% endfor %}<br>
 
     {% if user.is_authenticated %}
         You are Loged in, <a href="/blog-new">Write a new blog >>></a>
