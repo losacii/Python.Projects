@@ -9,12 +9,11 @@ class ContactForm(forms.Form):
 class PostModelForm(forms.ModelForm):
     class Meta:
         model = Post
-        fields = ['title', 'slug', 'content', 'publish_date']
+        fields = ['title', 'image', 'slug', 'content', 'publish_date']
     
     def clean_title(self, *args, **kwargs):
         instance = self.instance
         title = self.cleaned_data.get('title')
-        print('-------------->', title)
         qs = Post.objects.filter(title__iexact=title)
         if instance:
             qs = qs.exclude(pk=instance.pk)

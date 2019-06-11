@@ -1,0 +1,19 @@
+<!-- searches/view.html -->
+{% extends 'home/base.html' %}
+
+{% block content %}
+<div class="row">
+    <div class="col-12 col-8 mx-auto">
+        {% if query %}
+            <p class="lead">You searched for <b style="color:blue">{{ query }}</b></p>
+        {% endif %}
+
+
+    {% for post in posts %}
+        {% include 'blog/list-inline.html' with truncate=True %}
+    {% endfor %}<br>
+
+        
+    </div>
+</div>
+{% endblock %}

@@ -14,6 +14,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'blog',
+    'searches',
 ]
 
 MIDDLEWARE = [
@@ -96,10 +97,13 @@ USE_TZ = True
 
 # Static
 STATIC_URL = '/static/'
-#STATIC_ROOT = 
+
+LOCAL_STATIC_CDN_PATH = os.path.join(BASE_DIR, 'static_cdn_test')
+STATIC_ROOT = os.path.join(LOCAL_STATIC_CDN_PATH, 'static')
+
 STATICFILES_DIRS = (
-    os.path.join(BASE_DIR, 'static/'),
+    os.path.join(BASE_DIR, 'staticfiles'),
 )
 
-#MEDIA_ROOT
-#MEDIA_URL
+MEDIA_ROOT = os.path.join(LOCAL_STATIC_CDN_PATH, 'media')
+MEDIA_URL = '/media/'

@@ -19,7 +19,7 @@ def post_list_view(request):
 
 @staff_member_required  # prompt user log in
 def post_create_view(request):
-    form = PostModelForm(request.POST or None)
+    form = PostModelForm(request.POST or None, request.FILES or None)
     if form.is_valid():
 
         # data = form.cleaned_data
@@ -54,6 +54,7 @@ def post_update_view(request, slug):
     form = PostModelForm(request.POST or None, instance=obj)
     if form.is_valid():
         form.save()
+        print("--------> Updated!")
     template = 'home/form.html'
     context = { "form": form, 'title': f"Update: {obj.title}" }
     return render(request, template, context)
