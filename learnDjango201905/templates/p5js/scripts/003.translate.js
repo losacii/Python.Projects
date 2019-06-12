@@ -7,14 +7,16 @@ function setup() {
     background(25);
 
     stroke(0, 200, 0);
-    strokeWeight(5);
+    strokeWeight(1);
 
     noFill();
 }
 
-var x = 30;
+var x = 15;
+num = 1
 function draw() {
-    for(var i=0; i<16; i++){
-        ellipse(x+i*30, 50, 10, 180);
-    }
+    translate(width/2, height/2 - 100);
+
+    num += 1
+    ellipse(x, 50, 50+num*5, 30+num*10);
 }

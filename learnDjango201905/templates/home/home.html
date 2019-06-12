@@ -1,8 +1,9 @@
 {% extends 'home/base.html' %}
 
 {% block content %}
-    <h2>Hello There!</h2>
+    <h2>P5.JS examples</h2>
     {% for script in p5scripts %}
-        <a href="p5js_page/23232">{{ script }}</a><br>
+        <a target="blank" href="p5js_page/{{ script }}">{{ script }}</a><br>
     {% endfor %}
+    <a href="https://p5js.org/reference/" target="blank"><h5>p5.js - Reference</h5></a>
 {% endblock %}

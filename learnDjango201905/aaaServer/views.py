@@ -3,7 +3,7 @@ import os
 from . import settings
 
 def home(request):
-    scriptDir = os.path.join(settings.BASE_DIR, 'static', 'p5js', 'scripts')
+    scriptDir = os.path.join(settings.BASE_DIR, 'templates', 'p5js', 'scripts')
     names = os.listdir(scriptDir)
     names.sort()
     context = {"p5scripts": names }
@@ -15,7 +15,6 @@ def p5js_page(request):
     return render(request, template)
 
 def p5js_page_show(request, sname):
-    name = 'p5js/scripts/{}'.format(sname)
-    context = {"name": name}
+    context = { "url": f"p5js/scripts/{sname}" }
     template = 'p5js/home.html'
     return render(request, template, context)

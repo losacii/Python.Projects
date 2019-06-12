@@ -7,14 +7,20 @@ function setup() {
     background(25);
 
     stroke(0, 200, 0);
-    strokeWeight(5);
+    strokeWeight(1);
 
     noFill();
 }
 
-var x = 30;
+var x = -240;
 function draw() {
+    translate(width/2, height/2 - 100);
     for(var i=0; i<16; i++){
-        rect(x+i*30, 50, 10, 180);
+        ellipse(x+i*30, 50, 30, 180);
     }
 }
+
+// translate(X, Y)
+// for loop
+// frateRate
+// stroke(random(255),random(255),random(255));
