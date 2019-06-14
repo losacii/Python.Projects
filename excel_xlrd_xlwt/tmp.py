@@ -1,5 +1,10 @@
 #coding=utf-8
 
+from os import system as command
+def odir():
+    command("explorer .")
+
+
 def task_00():
     '''
         由于 office 自动调整行高的功能，导致文字上下离线太近，
@@ -7,7 +12,6 @@ def task_00():
         需求： 把各行高度都增加 25 像素
     '''
     from openpyxl import load_workbook
-    from os import system as command
     
     # 载入 workbook, 显示 sheet 的名称
     wb = load_workbook('target.xlsx'); print(wb.sheetnames)
@@ -90,3 +94,4 @@ def tmp():
 
 if __name__ == "__main__":
     tmp()
+    odir()
