@@ -1,0 +1,8 @@
+
+  lsblk
+  
+  sudo mount /dev/sda /mnt/x
+  
+  cd /mnt/x
+  
+  python3 -m http.server
